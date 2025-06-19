@@ -8,12 +8,14 @@ from PyQt6.QtWidgets import (
     QStackedWidget,
     QFrame,
     QSizePolicy,
+    QComboBox,
 )
-from PyQt6.QtGui import QIcon, QFont
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QIcon
+from PyQt6.QtCore import QSize
 
 from src.theme.theme_manager import ThemeManager
 from src.ui.categories import Categories
+import src.static.config as cfg
 
 
 class MainWindow(QMainWindow):
@@ -27,7 +29,13 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(centralWidget)
 
         self.theme_manager = ThemeManager()
-        self.theme_manager.apply_theme(dark_mode=True)  # Aydınlık tema başlangıçta
+        self.theme_manager.apply_theme(dark_mode=cfg.IS_THEME_DARK)
+
+        # Theme selector combo box
+        self.themeCombo = QComboBox()
+        self.themeCombo.addItems(["Koyu Tema", "Açık Tema"])
+        self.themeCombo.setCurrentText("Dark Theme")
+        self.themeCombo.currentTextChanged.connect(self.on_theme_changed)
 
         # Ana düzen oluşturma
         mainLayout = QHBoxLayout(centralWidget)
@@ -70,6 +78,8 @@ class MainWindow(QMainWindow):
 
             self.contentStack.addWidget(widget)
 
+        leftLayout.addWidget(self.themeCombo)
+
         # SAĞ PANEL - Ana içerik alanı ve butonlar
         rightPanel = QWidget()
         rightLayout = QVBoxLayout(rightPanel)
@@ -108,6 +118,20 @@ class MainWindow(QMainWindow):
         # İlk kategoriyi seç
         self.categoryButtons[0].setChecked(True)
         self.changeCategory(0)
+
+    def on_theme_changed(self, theme):
+        """Tema değiştiğinde çağrılır."""
+        if theme == "Dark Theme":
+            cfg.IS_THEME_DARK = True
+            self.theme_manager.apply_theme(dark_mode=True)
+        else:
+            cfg.IS_THEME_DARK = False
+            self.theme_manager.apply_theme(dark_mode=False)
+
+        # Temayı uyguladıktan sonra arayüzü yeniden çiz
+        self.update()
+        for _, _, widget in self.categories.categories_list:
+            widget.update()
 
     def changeCategory(self, index):
         # Tüm butonların seçimini kaldır

@@ -1,0 +1,1 @@
+IS_THEME_DARK = True

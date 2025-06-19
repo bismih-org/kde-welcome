@@ -17,36 +17,36 @@ class ThemeManager:
             "SECONDARY_BG": "#1a1a24",
             "TEXT": "#f0f0f5",
             "BORDER": "#303038",
-            "ACCENT": "#c23232",         # Ana vurgu rengi (194, 50, 50)
-            "ACCENT_HOVER": "#d24141",
-            "ACCENT_PRESSED": "#ef2828", 
+            "ACCENT": "#d35400",         # Ana vurgu rengi (211, 84, 0)
+            "ACCENT_HOVER": "#e67e22",   # Daha yumuşak turuncu
+            "ACCENT_PRESSED": "#c0392b", # Daha koyu turuncu-kırmızı
             "DISABLED_BG": "#2a2a34",
             "DISABLED_TEXT": "#707080",
             "START_BUTTON": "#2e9e6a",   # Yeşil
             "START_BUTTON_HOVER": "#35b378",
-            "STOP_BUTTON": "#c23232",    # Kırmızı (ana renk)
-            "STOP_BUTTON_HOVER": "#d24141",
+            "STOP_BUTTON": "#d35400",    # Turuncu (ana renk)
+            "STOP_BUTTON_HOVER": "#e67e22",
             "EXIT_BUTTON": "#505058",
             "SAVE_BUTTON": "#3c82be",    # Mavi
             "ALTERNATE_ROW": "#1e1e28",
             "SELECTION_BG": "#403046",   # Hafif mor ton
         }
         
-        # Aydınlık tema - Ana vurgu rengi daha yumuşak (194, 50, 50)
+        # Aydınlık tema - Ana vurgu rengi daha yumuşak (211, 84, 0)
         self.light_theme = {
             "MAIN_BG": "#f8f8fa",
             "SECONDARY_BG": "#ffffff",
             "TEXT": "#2a2a32",
             "BORDER": "#dadae0",
-            "ACCENT": "#c23232",         # Ana vurgu rengi (194, 50, 50)
-            "ACCENT_HOVER": "#d24141",
-            "ACCENT_PRESSED": "#ef2828",
+            "ACCENT": "#d35400",         # Ana vurgu rengi (211, 84, 0)
+            "ACCENT_HOVER": "#e67e22",   # Daha yumuşak turuncu
+            "ACCENT_PRESSED": "#c0392b", # Daha koyu turuncu-kırmızı
             "DISABLED_BG": "#e8e8ec",
             "DISABLED_TEXT": "#a0a0a8",
             "START_BUTTON": "#2eb87a",   # Yeşil
             "START_BUTTON_HOVER": "#35d090",
-            "STOP_BUTTON": "#c23232",    # Kırmızı (ana renk)
-            "STOP_BUTTON_HOVER": "#d24141",
+            "STOP_BUTTON": "#d35400",    # Turuncu (ana renk)
+            "STOP_BUTTON_HOVER": "#e67e22",
             "EXIT_BUTTON": "#858590",
             "SAVE_BUTTON": "#3c92de",    # Mavi
             "ALTERNATE_ROW": "#f0f4fa",
