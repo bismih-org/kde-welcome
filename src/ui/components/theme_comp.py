@@ -35,3 +35,6 @@ class ThemeComp(QWidget):
 
 
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass

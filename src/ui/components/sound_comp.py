@@ -35,3 +35,6 @@ class SoundComp(QWidget):
 
 
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass

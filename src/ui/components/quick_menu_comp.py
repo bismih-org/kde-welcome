@@ -35,3 +35,6 @@ class QuickMenuComp(QWidget):
 
 
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass

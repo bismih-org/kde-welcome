@@ -31,3 +31,6 @@ class MainCompWidget(QWidget):
         label = QLabel("Test")
         mainLayout.addWidget(label)
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass

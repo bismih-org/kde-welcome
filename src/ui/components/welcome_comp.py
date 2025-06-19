@@ -11,27 +11,51 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt, QSize
+from src.ui.widgets.BLabel import BLabel
+import src.static.config as cfg
+
 
 class WelcomeComp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
 
-        
-
     def initUI(self):
         # Ana düzen oluşturma
-        mainLayout = QVBoxLayout(self)
-        mainLayout.setSpacing(0)
-        mainLayout.setContentsMargins(0, 0, 0, 0)
+        self.mainLayout = QVBoxLayout(self)
+        self.mainLayout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.mainLayout.setContentsMargins(20, 20, 20, 20)
+        self.mainLayout.setSpacing(0)
+        self.mainLayout.setContentsMargins(0, 0, 0, 0)
 
-        font = QFont("Arial", 16, QFont.Weight.Bold)
+        # İkon gösterimi için QLabel oluştur
+        self.icon_label = QLabel()
+        self.icon_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.mainLayout.addWidget(self.icon_label)
 
-        label = QLabel("Bismih Linux'a Hoş Geldiniz")
-        label.setObjectName("shortcutLabel")
-        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        label.setFont(font)
-        mainLayout.addWidget(label)
+        # Başlık ve açıklama ekle
+        self.title = BLabel("Bismih Linux'a Hoş Geldiniz", 37, is_bold=True)
+        self.mainLayout.addWidget(self.title)
+        self.mainLayout.addSpacing(20)
 
+        self.description = BLabel(
+            "Kullanıcı dostu arayüzü ve güçlü araçlarıyla\n "
+            "Linux deneyiminizi zenginleştirir.\n"
+            "Başlamak için aşağıdaki kılavuzları takip edin.",
+            is_bold=False,
+        )
+        self.description.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.mainLayout.addWidget(self.description)
 
-        self.setLayout(mainLayout)
+        self.setLayout(self.mainLayout)
+
+        # İkonu güncelle
+        self.update()
+
+    def update(self):
+        # İkon yolunu temaya göre güncelle
+        p = "data/images/bismih_icon_"
+        icon_path = p + ("dark" if not cfg.IS_THEME_DARK else "light") + ".png"
+        print(f"Icon path: {icon_path}")
+        icon_pixmap = QIcon(icon_path).pixmap(QSize(256, 256))
+        self.icon_label.setPixmap(icon_pixmap)

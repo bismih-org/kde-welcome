@@ -35,3 +35,6 @@ class ScreenShotComp(QWidget):
 
 
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass

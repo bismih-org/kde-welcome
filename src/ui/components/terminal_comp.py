@@ -35,3 +35,6 @@ class TerminalComp(QWidget):
 
 
         self.setLayout(mainLayout)
+
+    def update(self):
+        pass
