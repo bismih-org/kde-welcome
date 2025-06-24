@@ -32,5 +32,5 @@ class MainCompWidget(QWidget):
         mainLayout.addWidget(label)
         self.setLayout(mainLayout)
 
-    def update(self):
+    def updateWid(self):
         pass

@@ -36,5 +36,5 @@ class CommunicationComp(QWidget):
 
         self.setLayout(mainLayout)
 
-    def update(self):
+    def updateWid(self):
         pass

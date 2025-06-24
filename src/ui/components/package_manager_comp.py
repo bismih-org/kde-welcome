@@ -76,5 +76,5 @@ class PackageManagerComp(QWidget):
         self.setLayout(layout)
 
 
-    def update(self):
+    def updateWid(self):
         pass

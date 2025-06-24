@@ -36,5 +36,5 @@ class BrowserComp(QWidget):
 
         self.setLayout(mainLayout)
 
-    def update(self):
+    def updateWid(self):
         pass

@@ -15,9 +15,15 @@ from PyQt6.QtCore import Qt, QSize
 
 
 class BLabel(QLabel):
-    def __init__(self, text, font_size=16, is_bold=True, parent=None):
+    def __init__(self, text, font_size=16, is_bold=True, alignment="Center", parent=None):
         super().__init__(text, parent)
-        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        if alignment == "Center":
+            self.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        elif alignment == "Left":
+            self.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        elif alignment == "Right":
+            self.setAlignment(Qt.AlignmentFlag.AlignRight)
+
         if is_bold:
             self.setFont(QFont("Arial", font_size, QFont.Weight.ExtraBold))
         else:

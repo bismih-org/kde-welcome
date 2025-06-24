@@ -71,7 +71,7 @@ class MainWindow(QMainWindow):
             )
 
             button.clicked.connect(
-                lambda checked, i=len(self.categoryButtons): self.changeCategory(i)
+                lambda _, i=len(self.categoryButtons): self.changeCategory(i)
             )
             leftLayout.addWidget(button)
             self.categoryButtons.append(button)
@@ -121,7 +121,7 @@ class MainWindow(QMainWindow):
 
     def on_theme_changed(self, theme):
         """Tema değiştiğinde çağrılır."""
-        if theme == "Dark Theme":
+        if theme == "Koyu Tema":
             cfg.IS_THEME_DARK = True
             self.theme_manager.apply_theme(dark_mode=True)
         else:
@@ -131,7 +131,7 @@ class MainWindow(QMainWindow):
         # Temayı uyguladıktan sonra arayüzü yeniden çiz
         self.update()
         for _, _, widget in self.categories.categories_list:
-            widget.update()
+            widget.updateWid()
 
     def changeCategory(self, index):
         # Tüm butonların seçimini kaldır
