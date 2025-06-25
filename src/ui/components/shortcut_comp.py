@@ -14,7 +14,7 @@ class ShortcutComp(QWidget):
 
     def initUI(self):
         self.mainLayout = QHBoxLayout(self)
-        self.mainLayout.setContentsMargins(10, 10, 10, 10)
+        self.mainLayout.setContentsMargins(10, 30, 10, 10)
         self.mainLayout.setSpacing(20)
 
         self.lyt_left = QVBoxLayout()

@@ -4,6 +4,11 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QFont, QDesktopServices
 from PyQt6.QtCore import Qt, QUrl
 
+import subprocess
+
+from src.ui.widgets.BLabel import BLabel
+from src.ui.widgets.gif_viewer import GifViewer
+from src.static import config as cfg
 
 class PackageManagerComp(QWidget):
     def __init__(self):
@@ -12,69 +17,84 @@ class PackageManagerComp(QWidget):
 
     def initUI(self):
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(20, 20, 20, 20)
-        layout.setSpacing(16)
+        layout.setContentsMargins(10, 30, 10, 10)
+        # layout.setSpacing(20)
 
-        # Başlık
-        title = QLabel("📦 Paket Yönetimi")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title.setStyleSheet("font-size: 16pt; font-weight: bold;")
-        layout.addWidget(title)
 
-        # Açıklayıcı metin
-        description = QLabel(
-            "Bismih Linux’ta yazılım yüklemek için hem grafik arayüz hem de terminal araçlarını kullanabilirsiniz.\n"
-            "Flatpak, KDE Discover ve Nala entegrasyonları ile tam kontrol sizde."
-        )
-        description.setWordWrap(True)
-        description.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        layout.addWidget(description)
+        desc = """
+Program yüklemek için internette dolaşma
+Bismih Linux, Mağaza ve Uçbirim desteği ile kolaylıkla program yükle
+"""
+        lb_desc = BLabel(desc)
 
-        # Discover
-        discoverTitle = QLabel("🛍️ KDE Discover")
-        discoverTitle.setStyleSheet("font-size: 13pt; font-weight: bold;")
-        layout.addWidget(discoverTitle)
+        layout.addWidget(lb_desc)
 
-        discoverDesc = QLabel(
-            "- Uygulamaları kolayca kurun, güncelleyin.\n"
-            "- Flatpak ve sistem paketleri desteklenir.\n"
-            "- Arama çubuğundan uygulama ismiyle erişebilirsiniz."
-        )
-        discoverDesc.setWordWrap(True)
-        layout.addWidget(discoverDesc)
+        # Mağaza sistemi
 
-        # KRunner
-        krunnerTitle = QLabel("🚀 KRunner ile Hızlı Kurulum")
-        krunnerTitle.setStyleSheet("font-size: 13pt; font-weight: bold;")
-        layout.addWidget(krunnerTitle)
+        lyt_stores = QHBoxLayout()
+        lyt_stores.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        lyt_pardus_store = QVBoxLayout()
+        lyt_kesfet_store = QVBoxLayout()
+        lyt_pardus_store.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        lyt_kesfet_store.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        krunnerDesc = QLabel(
-            "- 'KRunner'ı açın (Alt + Space)\n"
-            "- Uygulama adını yazın, yükleme için yönlendirme alın."
-        )
-        krunnerDesc.setWordWrap(True)
-        layout.addWidget(krunnerDesc)
+        lb_pardus_store = BLabel("Pardus Mağaza ile Tüm Sistem paketleri", 10, is_bold=True)
+        lb_kesfet_store = BLabel("Kesfet Mağaza ile Daha Güncel ve Fazla Seçenek", 10, is_bold=True)
+        gif_pardus_store = GifViewer("data/gifs/pardus_magasa.gif",fixed_size=(200, 200))
+        gif_kesfet_store = GifViewer("data/gifs/kesfet.gif",fixed_size=(200, 200))
+        
+        btn_pardus_store = QPushButton("Pardus Mağaza")
+        btn_pardus_store.clicked.connect(lambda: self.open_app("pardus-software"))
+        btn_kesfet_store = QPushButton("Kesfet Mağaza")
+        btn_kesfet_store.clicked.connect(lambda: self.open_app("plasma-discover"))
 
-        # Nala
-        nalaTitle = QLabel("💻 Nala (Terminal Üzerinden)")
-        nalaTitle.setStyleSheet("font-size: 13pt; font-weight: bold;")
-        layout.addWidget(nalaTitle)
+        lyt_pardus_store.addWidget(lb_pardus_store)
+        lyt_pardus_store.addWidget(gif_pardus_store)
+        lyt_pardus_store.addWidget(btn_pardus_store)
 
-        nalaDesc = QLabel(
-            "- Modern, renkli ve hızlı bir APT arayüzü.\n"
-            "- Kullanım örneği: nala install firefox\n"
-            "- Daha fazla bilgi için: nala --help"
-        )
-        nalaDesc.setWordWrap(True)
-        layout.addWidget(nalaDesc)
+        lyt_kesfet_store.addWidget(lb_kesfet_store)
+        lyt_kesfet_store.addWidget(gif_kesfet_store)
+        lyt_kesfet_store.addWidget(btn_kesfet_store)
+
+        lyt_stores.addLayout(lyt_pardus_store)
+        lyt_stores.addStretch(1)  # Araya boşluk ekle
+        lyt_stores.addLayout(lyt_kesfet_store)
+
+
+        lyt_extra = QHBoxLayout()
+        lyt_nala = QVBoxLayout()
+        lyt_krunner = QVBoxLayout()
+        lyt_extra.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        lyt_krunner.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        lyt_nala.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        lb_nala = BLabel("Uç birimden hızlı ve görsel yükleme", 10, is_bold=True)
+        gif_nala = GifViewer("data/gifs/nala.gif",fixed_size=(200, 200))
+        lyt_nala.addWidget(lb_nala)
+        lyt_nala.addWidget(gif_nala)
+
+        lb_krunner = BLabel("KRunner ile Hızlı Arama", 10, is_bold=True)
+        gif_krunner = GifViewer("data/gifs/krunner.gif",fixed_size=(200, 200))
+        lyt_krunner.addWidget(lb_krunner)
+        lyt_krunner.addWidget(gif_krunner)
+
+        lyt_extra.addLayout(lyt_nala)
+        lyt_extra.addStretch(1)  # Araya boşluk ekle
+        lyt_extra.addLayout(lyt_krunner)
+
+        layout.addLayout(lyt_stores)
+        layout.addLayout(lyt_extra)
 
         # Belgeler Butonu
         docBtn = QPushButton("📘 Paket Yönetimi Belgeleri")
-        docBtn.clicked.connect(lambda: QDesktopServices.openUrl(QUrl("https://bismihlinux.org/docs/paketler")))
+        docBtn.clicked.connect(lambda: QDesktopServices.openUrl(QUrl("https://github.com/bismih-org/.github/wiki")))
         layout.addWidget(docBtn)
 
         self.setLayout(layout)
 
+
+    def open_app(self, app_name: str):
+        subprocess.Popen(app_name, shell=True)
 
     def updateWid(self):
         pass

@@ -2,7 +2,8 @@ from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QHBoxLayout, QFrame
 )
 from PyQt6.QtCore import Qt
-
+from src.ui.widgets.BLabel import BLabel
+from src.ui.widgets.gif_viewer import GifViewer
 
 class PanelComp(QWidget):
     def __init__(self):
@@ -12,20 +13,18 @@ class PanelComp(QWidget):
     def initUI(self):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(20, 20, 20, 20)
-        layout.setSpacing(16)
+        layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        # Başlık
-        title = QLabel("🧭 Panel Kullanımı")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title.setStyleSheet("font-size: 16pt; font-weight: bold;")
-        layout.addWidget(title)
+        gif_panel = GifViewer("data/gifs/panel.gif", fixed_size=(1000, 250))
 
+        layout.addWidget(gif_panel)
         # Giriş Açıklaması
-        intro = QLabel(
-            "Panel, sisteminizin kontrol merkezidir. Aşağıda panel üzerindeki ögelerin kısa açıklamalarını bulabilirsiniz:"
+        intro = BLabel(
+            "Panel, sisteminizin kontrol merkezidir. Aşağıda panel üzerindeki ögelerin kısa açıklamalarını bulabilirsiniz:",
+            12, is_bold=True
         )
-        intro.setWordWrap(True)
         layout.addWidget(intro)
+
 
         def section(title: str, desc: str):
             box = QVBoxLayout()
@@ -33,7 +32,7 @@ class PanelComp(QWidget):
             titleLabel.setStyleSheet("font-weight: bold; font-size: 12pt;")
             descLabel = QLabel(desc)
             descLabel.setWordWrap(True)
-            descLabel.setStyleSheet("font-size: 10pt; color: gray;")
+            descLabel.setStyleSheet("font-size: 11pt; color: gray;")
             box.addWidget(titleLabel)
             box.addWidget(descLabel)
             return box

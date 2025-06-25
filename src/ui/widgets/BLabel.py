@@ -1,16 +1,9 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
-    QPushButton,
-    QWidget,
-    QVBoxLayout,
-    QHBoxLayout,
     QLabel,
-    QStackedWidget,
-    QFrame,
     QSizePolicy,
 )
-from PyQt6.QtGui import QIcon, QFont
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QFont
+from PyQt6.QtCore import Qt
 
 
 

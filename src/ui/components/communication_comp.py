@@ -11,6 +11,9 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtGui import QIcon, QFont
 from PyQt6.QtCore import Qt, QSize
+import webbrowser
+from src.ui.widgets.BLabel import BLabel
+from src.ui.widgets.gif_viewer import GifViewer
 
 class CommunicationComp(QWidget):
     def __init__(self):
@@ -25,14 +28,22 @@ class CommunicationComp(QWidget):
         mainLayout.setSpacing(0)
         mainLayout.setContentsMargins(0, 0, 0, 0)
 
-        font = QFont("Arial", 16, QFont.Weight.Bold)
 
-        label = QLabel("İletişim Bilgileri")
-        label.setObjectName("shortcutLabel")
-        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        label.setFont(font)
+        label = BLabel("İletişim Bilgileri")
         mainLayout.addWidget(label)
 
+        lyt_btn = QHBoxLayout()
+
+        btn_github = QPushButton("GitHub")
+        btn_github.clicked.connect(lambda: self.open_link("https://github.com/bismih-org"))
+
+        btn_forum = QPushButton("Forum")
+        btn_forum.clicked.connect(lambda: self.open_link("https://github.com/orgs/bismih-org/discussions"))
+
+        lyt_btn.addWidget(btn_github, alignment=Qt.AlignmentFlag.AlignCenter)
+        lyt_btn.addWidget(btn_forum, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        mainLayout.addLayout(lyt_btn)
 
         self.setLayout(mainLayout)
 
