@@ -26,7 +26,7 @@ data_files = [
     # Icons
     (
         "/usr/share/icons/hicolor/scalable/apps/",
-        ["data/icons/quick_shortcut_panel.png"],
+        ["data/icons/bismih-welcome.svg"],
     ),
     # Main application files
     ("/usr/share/bismih-welcome/", ["main.py"]),
@@ -75,7 +75,6 @@ data_files = [
         "data/icons/dialog-svgrepo-com.svg",
         "data/icons/gui-gesture-pinch-close-svgrepo-com.svg",
         "data/icons/home-1-svgrepo-com.svg",
-        "data/icons/icon.svg",
         "data/icons/layout-16-svgrepo-com.svg",
         "data/icons/LICENSE",
         "data/icons/package-svgrepo-com.svg",
