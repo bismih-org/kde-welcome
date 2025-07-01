@@ -1,4 +1,4 @@
-Source: bismih-welcom
+Source: bismih-welcome
 Section: x11
 Priority: optional
 Maintainer: Muhammet Halak <halakmuhammet145@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper-compat (= 13), dh-python, python3-all, python3-setuptoo
 Standards-Version: 4.6.1
 Homepage: https://github.com/bismih-org/bismih-welcome
 
-Package: bismih-welcom
+Package: bismih-welcome
 Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends},
