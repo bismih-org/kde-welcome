@@ -1,28 +1,22 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
     QPushButton,
     QWidget,
     QVBoxLayout,
     QHBoxLayout,
     QLabel,
-    QStackedWidget,
-    QFrame,
-    QSizePolicy,
 )
-from PyQt6.QtGui import QIcon, QFont
+from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import Qt, QSize
 import webbrowser
 
 
 from src.ui.widgets.BLabel import BLabel
-from src.ui.widgets.gif_viewer import GifViewer
+
 
 class BrowserComp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-
-        
 
     def initUI(self):
         # Ana düzen oluşturma
@@ -51,16 +45,32 @@ Tavsiye edilen eklentiler:
 
         lyt_ext_btns = QHBoxLayout()
         lyt_ext_btns.setContentsMargins(0, 0, 0, 0)
-        lyt_ext_btns.setSpacing(10) 
+        lyt_ext_btns.setSpacing(10)
 
         btn_ublock = QPushButton("Ublock")
-        btn_ublock.clicked.connect(lambda: self.open_link("https://addons.mozilla.org/tr/firefox/addon/ublock-origin/"))
+        btn_ublock.clicked.connect(
+            lambda: self.open_link(
+                "https://addons.mozilla.org/tr/firefox/addon/ublock-origin/"
+            )
+        )
         btn_dark_reader = QPushButton("Dark Reader")
-        btn_dark_reader.clicked.connect(lambda: self.open_link("https://addons.mozilla.org/tr/firefox/addon/darkreader/"))
+        btn_dark_reader.clicked.connect(
+            lambda: self.open_link(
+                "https://addons.mozilla.org/tr/firefox/addon/darkreader/"
+            )
+        )
         btn_tabliss = QPushButton("Tabliss")
-        btn_tabliss.clicked.connect(lambda: self.open_link("https://addons.mozilla.org/tr/firefox/addon/tabliss/"))
+        btn_tabliss.clicked.connect(
+            lambda: self.open_link(
+                "https://addons.mozilla.org/tr/firefox/addon/tabliss/"
+            )
+        )
         btn_sideberyy = QPushButton("Sideberyy")
-        btn_sideberyy.clicked.connect(lambda: self.open_link("https://addons.mozilla.org/tr/firefox/addon/sidebery/"))
+        btn_sideberyy.clicked.connect(
+            lambda: self.open_link(
+                "https://addons.mozilla.org/tr/firefox/addon/sidebery/"
+            )
+        )
 
         lyt_ext_btns.addWidget(btn_ublock)
         lyt_ext_btns.addWidget(btn_dark_reader)
@@ -68,7 +78,6 @@ Tavsiye edilen eklentiler:
         lyt_ext_btns.addWidget(btn_sideberyy)
 
         mainLayout.addLayout(lyt_ext_btns)
-
 
         self.setLayout(mainLayout)
 

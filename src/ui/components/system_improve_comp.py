@@ -1,23 +1,16 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
-    QPushButton,
     QWidget,
     QVBoxLayout,
-    QHBoxLayout,
     QLabel,
-    QStackedWidget,
-    QFrame,
-    QSizePolicy,
 )
-from PyQt6.QtGui import QIcon, QFont
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtGui import QFont
+from PyQt6.QtCore import Qt
+
 
 class SystemImprovementComp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-
-        
 
     def initUI(self):
         # Ana düzen oluşturma
@@ -32,7 +25,6 @@ class SystemImprovementComp(QWidget):
         label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         label.setFont(font)
         mainLayout.addWidget(label)
-
 
         self.setLayout(mainLayout)
 

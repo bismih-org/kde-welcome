@@ -1,24 +1,16 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
-    QPushButton,
     QWidget,
     QVBoxLayout,
-    QHBoxLayout,
-    QLabel,
-    QStackedWidget,
-    QFrame,
-    QSizePolicy,
 )
-from PyQt6.QtGui import QIcon, QFont
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtCore import Qt
 from src.ui.widgets.BLabel import BLabel
 from src.ui.widgets.gif_viewer import GifViewer
+
+
 class QuickMenuComp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-
-        
 
     def initUI(self):
         # Ana düzen oluşturma
@@ -30,13 +22,14 @@ class QuickMenuComp(QWidget):
         self.title.setAlignment(Qt.AlignmentFlag.AlignCenter)
         mainLayout.addWidget(self.title)
 
-        self.description = BLabel("Hızlı Menü ile bir çok kısyalo ve işlemi tek tıkla yapabilirsiniz.")
+        self.description = BLabel(
+            "Hızlı Menü ile bir çok kısyalo ve işlemi tek tıkla yapabilirsiniz."
+        )
         self.description.setAlignment(Qt.AlignmentFlag.AlignCenter)
         mainLayout.addWidget(self.description)
-        
+
         gif_ozel_panel = GifViewer("data/gifs/ozel_panel.gif", fixed_size=(400, 400))
         mainLayout.addWidget(gif_ozel_panel, alignment=Qt.AlignmentFlag.AlignCenter)
-
 
         self.setLayout(mainLayout)
 

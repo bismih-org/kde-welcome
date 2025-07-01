@@ -1,34 +1,26 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
-    QPushButton,
     QWidget,
     QVBoxLayout,
     QHBoxLayout,
-    QLabel,
-    QStackedWidget,
-    QFrame,
-    QSizePolicy,
 )
-from PyQt6.QtGui import QIcon, QFont
-from PyQt6.QtCore import Qt, QSize
+from PyQt6.QtCore import Qt
 
 from src.ui.widgets.BLabel import BLabel
 from src.ui.widgets.gif_viewer import GifViewer
+
+
 class ScreenShotComp(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-
-        
 
     def initUI(self):
         # Ana düzen oluşturma
         mainLayout = QHBoxLayout(self)
         mainLayout.setContentsMargins(0, 0, 0, 0)
 
-
         lyt_flame = QVBoxLayout()
-        lb_flame = BLabel("Print tuşu ile detaylı ekran görüntüsü",is_bold=True)
+        lb_flame = BLabel("Print tuşu ile detaylı ekran görüntüsü", is_bold=True)
         gif_flame = GifViewer("data/gifs/ekran.gif", fixed_size=(550, 550))
 
         lyt_flame.addWidget(lb_flame, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -43,7 +35,6 @@ class ScreenShotComp(QWidget):
 
         mainLayout.addLayout(lyt_flame, stretch=1)
         mainLayout.addLayout(lyt_normcap, stretch=1)
-
 
         self.setLayout(mainLayout)
 
