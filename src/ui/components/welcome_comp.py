@@ -1,18 +1,14 @@
 from PyQt6.QtWidgets import (
-    QMainWindow,
-    QPushButton,
     QWidget,
     QVBoxLayout,
-    QHBoxLayout,
     QLabel,
-    QStackedWidget,
-    QFrame,
-    QSizePolicy,
+    QCheckBox,
 )
-from PyQt6.QtGui import QIcon, QFont
+from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import Qt, QSize
 from src.ui.widgets.BLabel import BLabel
 import src.static.config as cfg
+import os
 
 
 class WelcomeComp(QWidget):
@@ -47,10 +43,25 @@ class WelcomeComp(QWidget):
         self.description.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.mainLayout.addWidget(self.description)
 
+        self.chkbox_autostart = QCheckBox("Başlangıçta çalıştır")
+        self.chkbox_autostart.setChecked(True)
+        self.chkbox_autostart.stateChanged.connect(self.on_checkbox_toggled)
+        self.mainLayout.addWidget(
+            self.chkbox_autostart, alignment=Qt.AlignmentFlag.AlignCenter
+        )
+
         self.setLayout(self.mainLayout)
 
         # İkonu güncelle
         self.updateWid()
+
+    def on_checkbox_toggled(self, checked):
+        """Checkbox durumunu güncelle"""
+        if checked:
+            os.system(f"cp -rf {cfg.DESKTOP_ROOT_PATH} {cfg.DESKTOP_PATH}")
+        else:
+            if os.path.exists(cfg.DESKTOP_PATH):
+                os.remove(cfg.DESKTOP_PATH)
 
     def updateWid(self):
         # İkon yolunu temaya göre güncelle
