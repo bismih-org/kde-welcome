@@ -56,12 +56,12 @@ class CommunicationComp(QWidget):
         )
         cards_layout.addWidget(forum_card, 0, 1)
 
-        # Discord kartı (örnek)
+        # Signal kartı
         discord_card = self.create_contact_card(
-            "Discord", 
+            "Signal", 
             "Anlık sohbet ve topluluk",
-            "https://discord.gg/bismih",  # Gerçek link ile değiştirin
-            "#5865f2"
+            "https://signal.group/#CjQKILD6taU2K6HXyYScZY08o4o2krF3xQDktDrxFIq16JNiEhAS6WpiAcJ6a2_Ii_2GFDrQ",  # Gerçek link ile değiştirin
+            "#2530FD"
         )
         cards_layout.addWidget(discord_card, 1, 0)
 
@@ -69,7 +69,7 @@ class CommunicationComp(QWidget):
         email_card = self.create_contact_card(
             "E-posta", 
             "Resmi iletişim ve destek",
-            "mailto:info@bismih.org",  # Gerçek email ile değiştirin
+            "mailto:halakmuhammet145@gmail.com",  # Gerçek email ile değiştirin
             "#ea4335"
         )
         cards_layout.addWidget(email_card, 1, 1)
