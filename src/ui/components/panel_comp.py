@@ -16,7 +16,7 @@ class PanelComp(QWidget):
 
         gif_panel = GifViewer("data/gifs/panel.gif", fixed_size=(1000, 250))
 
-        layout.addWidget(gif_panel)
+        layout.addWidget(gif_panel, alignment=Qt.AlignmentFlag.AlignCenter)
         # Giriş Açıklaması
         intro = BLabel(
             "Panel, sisteminizin kontrol merkezidir. Aşağıda panel üzerindeki ögelerin kısa açıklamalarını bulabilirsiniz:",

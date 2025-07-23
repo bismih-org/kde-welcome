@@ -23,7 +23,12 @@ class QuickMenuComp(QWidget):
         mainLayout.addWidget(self.title)
 
         self.description = BLabel(
-            "Hızlı Menü ile bir çok kısyalo ve işlemi tek tıkla yapabilirsiniz."
+            """
+Hızlı Menü ile bir çok kısyalo ve işlemi tek tıkla yapabilirsiniz.
+
+Kullanmak için
+ctrl+shift+j
+"""
         )
         self.description.setAlignment(Qt.AlignmentFlag.AlignCenter)
         mainLayout.addWidget(self.description)

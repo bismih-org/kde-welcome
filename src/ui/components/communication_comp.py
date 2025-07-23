@@ -39,8 +39,8 @@ class CommunicationComp(QWidget):
         cards_layout.setSpacing(10)
 
         # GitHub kartı
-        github_card = self.create_contact_card(
-            "GitHub", 
+        github_card = self.generate_contact_card(
+            "GitHub",
             "Kaynak kod, issue'lar ve katkıda bulunma",
             "https://github.com/bismih-org",
             "#24292e"
@@ -48,8 +48,8 @@ class CommunicationComp(QWidget):
         cards_layout.addWidget(github_card, 0, 0)
 
         # Forum kartı
-        forum_card = self.create_contact_card(
-            "Forum", 
+        forum_card = self.generate_contact_card(
+            "Forum",
             "Topluluk tartışmaları ve destek",
             "https://github.com/orgs/bismih-org/discussions",
             "#0969da"
@@ -57,8 +57,8 @@ class CommunicationComp(QWidget):
         cards_layout.addWidget(forum_card, 0, 1)
 
         # Signal kartı
-        discord_card = self.create_contact_card(
-            "Signal", 
+        discord_card = self.generate_contact_card(
+            "Signal",
             "Anlık sohbet ve topluluk",
             "https://signal.group/#CjQKILD6taU2K6HXyYScZY08o4o2krF3xQDktDrxFIq16JNiEhAS6WpiAcJ6a2_Ii_2GFDrQ",  # Gerçek link ile değiştirin
             "#2530FD"
@@ -66,8 +66,8 @@ class CommunicationComp(QWidget):
         cards_layout.addWidget(discord_card, 1, 0)
 
         # Email kartı
-        email_card = self.create_contact_card(
-            "E-posta", 
+        email_card = self.generate_contact_card(
+            "E-posta",
             "Resmi iletişim ve destek",
             "mailto:halakmuhammet145@gmail.com",  # Gerçek email ile değiştirin
             "#ea4335"
@@ -89,7 +89,7 @@ class CommunicationComp(QWidget):
 
         self.setLayout(mainLayout)
 
-    def create_contact_card(self, title: str, description: str, url: str, color: str):
+    def generate_contact_card(self, title: str, description: str, url: str, color: str):
         """İletişim kartı oluşturur"""
         card = QFrame()
         card.setFrameShape(QFrame.Shape.Box)

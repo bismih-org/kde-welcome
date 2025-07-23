@@ -41,7 +41,8 @@ class ShortcutComp(QWidget):
             ("🖨️ Print", "Ekran Görüntüsü"),
             ("📸 Ctrl + Print", "Görselden Yazıya"),
             ("📁 Meta + E", "Dosya Yöneticisi"),
-            ("🖥️ Meta + ⇦ ⇨", "Sanal Masaüstlerinde Gezinme"),
+            ("🖥️ Meta + Ctrl ⇦ ⇨", "Sanal Masaüstlerinde Gezinme"),
+            ("🖥️ Meta + Ctrl + Shift⇦ ⇨", "Sanal Masaüstlerinde Pencreyle Gezinme"),
             ("🖱️ Meta + Fare sağ", "Pencere Taşıma"),
             ("🔍 Meta + Fare Sol", "Pencere Büyütme/Küçültme"),
             ("🌐 Meta + F", "Tarayıcı"),
@@ -139,7 +140,6 @@ class TouchpadWidget(QWidget):
     def updateWid(self):
         path = self.image_path + ("d" if not cfg.IS_THEME_DARK else "l") + ".png"
         if os.path.exists(path):
-            print(f"Loading image from: {path}")
             icon_pixmap = QIcon(path).pixmap(QSize(64, 64))
             self.label_image.setPixmap(icon_pixmap)
         else:

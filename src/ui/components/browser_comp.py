@@ -37,6 +37,7 @@ Tavsiye edilen eklentiler:
 - Dark Reader: Karanlık mod eklentisi
 - Tabliss: Yeni sekme sayfasını özelleştirme eklentisi
 - Sideberyy: Kenar çubuğu eklentisi
+- Skip Silence: Sesli içeriklerde sessizlikleri atlama eklentisi
 """
 
         lb_desc = BLabel(desc, alignment="Left", is_bold=False)
@@ -72,10 +73,18 @@ Tavsiye edilen eklentiler:
             )
         )
 
+        btn_skip_slience = QPushButton("Skip Silence")
+        btn_skip_slience.clicked.connect(
+            lambda: self.open_link(
+                "https://addons.mozilla.org/tr/firefox/addon/skip-silence/"
+            )
+        )
+
         lyt_ext_btns.addWidget(btn_ublock)
         lyt_ext_btns.addWidget(btn_dark_reader)
         lyt_ext_btns.addWidget(btn_tabliss)
         lyt_ext_btns.addWidget(btn_sideberyy)
+        lyt_ext_btns.addWidget(btn_skip_slience)
 
         mainLayout.addLayout(lyt_ext_btns)
 
