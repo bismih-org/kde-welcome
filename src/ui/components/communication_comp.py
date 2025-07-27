@@ -42,7 +42,7 @@ class CommunicationComp(QWidget):
         github_card = self.generate_contact_card(
             "GitHub",
             "Kaynak kod, issue'lar ve katkıda bulunma",
-            "https://github.com/bismih-org",
+            "https://github.com/pardus",
             "#24292e"
         )
         cards_layout.addWidget(github_card, 0, 0)
@@ -51,16 +51,16 @@ class CommunicationComp(QWidget):
         forum_card = self.generate_contact_card(
             "Forum",
             "Topluluk tartışmaları ve destek",
-            "https://github.com/orgs/bismih-org/discussions",
+            "https://forum.pardus.org.tr/",
             "#0969da"
         )
         cards_layout.addWidget(forum_card, 0, 1)
 
-        # Signal kartı
+        # Discord kartı
         discord_card = self.generate_contact_card(
-            "Signal",
+            "Discord",
             "Anlık sohbet ve topluluk",
-            "https://signal.group/#CjQKILD6taU2K6HXyYScZY08o4o2krF3xQDktDrxFIq16JNiEhAS6WpiAcJ6a2_Ii_2GFDrQ",  # Gerçek link ile değiştirin
+            "https://discord.com/invite/vF7mj53ZNV",  # Gerçek link ile değiştirin
             "#2530FD"
         )
         cards_layout.addWidget(discord_card, 1, 0)
@@ -69,7 +69,7 @@ class CommunicationComp(QWidget):
         email_card = self.generate_contact_card(
             "E-posta",
             "Resmi iletişim ve destek",
-            "mailto:halakmuhammet145@gmail.com",  # Gerçek email ile değiştirin
+            "mailto:bilgi@pardus.org.tr",  # Gerçek email ile değiştirin
             "#ea4335"
         )
         cards_layout.addWidget(email_card, 1, 1)

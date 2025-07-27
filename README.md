@@ -1,14 +1,14 @@
-# Bismih Welcome
+# KDE Welcome
 
-Bismih Linux için kullanıcı dostu karşılama uygulaması. Bu uygulama, yeni kullanıcıların sistem özelliklerini keşfetmesini ve öğrenmesini sağlar.
+Pardus KDE için kullanıcı dostu karşılama uygulaması. Bu uygulama, yeni kullanıcıların sistem özelliklerini keşfetmesini ve öğrenmesini sağlar.
 
-<img src="data/images/app.png" alt="Bismih Logo" width="400"/>
-
-
-<img src="data/images/shortucut.png" alt="Bismih Logo" width="400"/>
+<img src="data/images/app.png" alt="kde Logo" width="400"/>
 
 
-<img src="data/images/terminal.png" alt="Bismih Logo" width="400"/>
+<img src="data/images/shortucut.png" alt="kde Logo" width="400"/>
+
+
+<img src="data/images/terminal.png" alt="kde Logo" width="400"/>
 
 
 ## 🌟 Özellikler
@@ -75,26 +75,26 @@ python3 main.py
 # Debian paketi oluşturma
 sudo apt install devscripts git-buildpackage
 sudo mk-build-deps -ir
-gbp buildpackage --git-export-dir=/tmp/build/bismih-welcome -us -uc --git-ignore-branch --git-ignore-new
+gbp buildpackage --git-export-dir=/tmp/build/kde-welcome -us -uc --git-ignore-branch --git-ignore-new
 ```
 
 ### Kurulum Sonrası
 
 Uygulama kurulduktan sonra aşağıdaki yollardan erişilebilir:
 
-- **Komut satırı**: `bismih-welcome`
-- **Uygulama menüsü**: "Bismih Welcome" uygulaması
+- **Komut satırı**: `kde-welcome`
+- **Uygulama menüsü**: "kde Welcome" uygulaması
 - **Otomatik başlatma**: Sistem başlangıcında otomatik çalışır (isteğe bağlı)
 
 ## 🏗️ Proje Yapısı
 
 ```
-bismih-welcome/
+kde-welcome/
 ├── main.py                 # Ana uygulama dosyası
 ├── setup.py               # Kurulum scripti
 ├── requirements.txt       # Python bağımlılıkları
-├── bismih-welcome         # Çalıştırılabilir script
-├── bismih-welcome.desktop # Desktop entry dosyası
+├── kde-welcome         # Çalıştırılabilir script
+├── kde-welcome.desktop # Desktop entry dosyası
 ├── data/                  # Veri dosyaları
 │   ├── theme.qss         # Tema stil dosyası
 │   ├── icons/            # İkon dosyaları
@@ -175,19 +175,7 @@ SECONDARY_BG = "#ffffff"    # İkinci arkaplan
 
 Bu proje [Apache License 2.0](LICENSE) altında lisanslanmıştır.
 
-## 👥 Topluluk
-
-- **GitHub**: [bismih-org](https://github.com/bismih-org)
-- **Forum**: [GitHub Discussions](https://github.com/orgs/bismih-org/discussions)
-- **Signal**: [Topluluk Grubu](https://signal.group/#CjQKILD6taU2K6HXyYScZY08o4o2krF3xQDktDrxFIq16JNiEhAS6WpiAcJ6a2_Ii_2GFDrQ)
-- **E-posta**: halakmuhammet145@gmail.com
 
 ## 🙏 Teşekkürler
 
 - **SVG Repo** - İkon dosyaları için
-- **PyQt6 Topluluğu** - Teknik destek için
-- **Bismih Linux Topluluğu** - Geri bildirimler için
-
----
-
-**Bismih Linux** - Kullanıcı dostu Linux deneyimi

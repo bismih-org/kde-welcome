@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0.1
+Type=Application
+Name=kde Welcome
+Name[tr]=kde Hoşgeldiniz
+Comment=Welcome to kde
+Comment[tr]=kde'e Hoşgeldiniz
+Exec=kde-welcome
+Icon=kde-welcome
+Terminal=false
+Categories=Utility;
+Keywords=kde;linux;welcome;
+Keywords[tr]=kde;linux;hosgeldin;

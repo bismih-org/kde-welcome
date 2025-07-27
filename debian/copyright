@@ -1,11 +1,11 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: bismih-welcome
+Upstream-Name: kde-welcome
 Upstream-Contact: Muhammet Halak <halakmuhammet145@gmail.com>
-Source: https://github.com/bismih-org/bismih-welcome
+Source: https://github.com/kde-org/kde-welcome
 
 
 Files: *
-Copyright: 2025, Bismih <halakmuhammet145@gmail.com>
+Copyright: 2025, kde <halakmuhammet145@gmail.com>
 License: Apache License
 
                                 Apache License

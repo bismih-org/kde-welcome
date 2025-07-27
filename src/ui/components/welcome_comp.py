@@ -30,7 +30,7 @@ class WelcomeComp(QWidget):
         self.mainLayout.addWidget(self.icon_label)
 
         # Başlık ve açıklama ekle
-        self.title = BLabel("Bismih Linux'a Hoş Geldiniz", 27, is_bold=True)
+        self.title = BLabel("kde Linux'a Hoş Geldiniz", 27, is_bold=True)
         self.mainLayout.addWidget(self.title)
         self.mainLayout.addSpacing(20)
 
@@ -65,7 +65,7 @@ class WelcomeComp(QWidget):
 
     def updateWid(self):
         # İkon yolunu temaya göre güncelle
-        p = "data/images/bismih_icon_"
+        p = "data/images/kde_icon_"
         icon_path = p + ("dark" if not cfg.IS_THEME_DARK else "light") + ".png"
         print(f"Icon path: {icon_path}")
         icon_pixmap = QIcon(icon_path).pixmap(QSize(256, 256))

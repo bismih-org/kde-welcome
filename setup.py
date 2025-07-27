@@ -21,31 +21,31 @@ if os.path.exists(changelog):
 
 data_files = [
     # Main executable and desktop file
-    ("/usr/bin", ["bismih-welcome"]),
-    ("/usr/share/applications", ["bismih-welcome.desktop"]),
+    ("/usr/bin", ["kde-welcome"]),
+    ("/usr/share/applications", ["kde-welcome.desktop"]),
     # Icons
     (
         "/usr/share/icons/hicolor/scalable/apps/",
-        ["data/icons/bismih-welcome.svg"],
+        ["data/icons/kde-welcome.svg"],
     ),
     # Main application files
-    ("/usr/share/bismih-welcome/", ["main.py"]),
+    ("/usr/share/kde-welcome/", ["main.py"]),
     # Source code - static
-    ("/usr/share/bismih-welcome/src/static", ["src/static/config.py"]),
+    ("/usr/share/kde-welcome/src/static", ["src/static/config.py"]),
     # Source code - theme
-    ("/usr/share/bismih-welcome/src/theme", ["src/theme/theme_manager.py"]),
-    ("/usr/share/bismih-welcome/src/theme/icons", [
+    ("/usr/share/kde-welcome/src/theme", ["src/theme/theme_manager.py"]),
+    ("/usr/share/kde-welcome/src/theme/icons", [
         "src/theme/icons/branch-closed.png",
         "src/theme/icons/branch-open.png",
         "src/theme/icons/check-white.png"
     ]),
     # Source code - UI
-    ("/usr/share/bismih-welcome/src/ui", [
+    ("/usr/share/kde-welcome/src/ui", [
         "src/ui/categories.py",
         "src/ui/main_window.py"
     ]),
     # Source code - UI components
-    ("/usr/share/bismih-welcome/src/ui/components", [
+    ("/usr/share/kde-welcome/src/ui/components", [
         "src/ui/components/browser_comp.py",
         "src/ui/components/communication_comp.py",
         "src/ui/components/layout_sellector_comp.py",
@@ -62,14 +62,14 @@ data_files = [
         "src/ui/components/welcome_comp.py"
     ]),
     # Source code - UI widgets
-    ("/usr/share/bismih-welcome/src/ui/widgets", [
+    ("/usr/share/kde-welcome/src/ui/widgets", [
         "src/ui/widgets/BLabel.py",
         "src/ui/widgets/gif_viewer.py"
     ]),
     # Data files - theme
-    ("/usr/share/bismih-welcome/data", ["data/theme.qss"]),
+    ("/usr/share/kde-welcome/data", ["data/theme.qss"]),
     # Data files - icons
-    ("/usr/share/bismih-welcome/data/icons", [
+    ("/usr/share/kde-welcome/data/icons", [
         "data/icons/browser-svgrepo-com.svg",
         "data/icons/circle-menu-svgrepo-com.svg",
         "data/icons/dialog-svgrepo-com.svg",
@@ -88,14 +88,14 @@ data_files = [
         "data/icons/terminal-svgrepo-com.svg"
     ]),
     # Data files - images
-    ("/usr/share/bismih-welcome/data/images", [
-        "data/images/bismih_icon_dark.png",
-        "data/images/bismih_icon_dark.svg",
-        "data/images/bismih_icon_light.png",
-        "data/images/bismih_icon_light.svg",
+    ("/usr/share/kde-welcome/data/images", [
+        "data/images/kde_icon_dark.png",
+        "data/images/kde_icon_dark.svg",
+        "data/images/kde_icon_light.png",
+        "data/images/kde_icon_light.svg",
         "data/images/zen_browser.png"
     ]),
-    ("/usr/share/bismih-welcome/data/images/gestures", [
+    ("/usr/share/kde-welcome/data/images/gestures", [
         "data/images/gestures/2gesture_d.png",
         "data/images/gestures/2gesture_l.png",
         "data/images/gestures/3gesture_d.png",
@@ -104,7 +104,7 @@ data_files = [
         "data/images/gestures/4gesture_l.png"
     ]),
     # Data files - gifs
-    ("/usr/share/bismih-welcome/data/gifs", [
+    ("/usr/share/kde-welcome/data/gifs", [
         "data/gifs/ekran.gif",
         "data/gifs/ekran_yazi.gif",
         "data/gifs/kesfet.gif",
@@ -120,21 +120,21 @@ data_files = [
         "data/gifs/terminal.gif"
     ]),
     # Test gif
-    ("/usr/share/bismih-welcome/data", ["data/test.gif"]),
+    ("/usr/share/kde-welcome/data", ["data/test.gif"]),
 ]
 
 
 setup(
-    name="bismih-welcome",
+    name="kde-welcome",
     version=version,
     packages=find_packages(),
-    scripts=["bismih-welcome"],
+    scripts=["kde-welcome"],
     install_requires=["PyQt6", "pyautogui", "coloredlogs", "pyyaml", "pyxdg"],
     data_files=data_files,
     author="Muhammet Halak",
     author_email="halakmuhammet145@gmail.com",
-    description="Bismih Welcome Application",
+    description="kde Welcome Application",
     license="GPLv3",
-    keywords="bismih-welcome, welcome, hoşgeldin, karşılama",
-    url="https://github.com/bismih-org/bismih-welcome",
+    keywords="kde-welcome, welcome, hoşgeldin, karşılama",
+    url="https://github.com/kde-org/kde-welcome",
 )

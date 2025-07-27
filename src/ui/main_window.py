@@ -112,7 +112,7 @@ class MainWindow(QMainWindow):
         mainLayout.addWidget(rightPanel, 1)  # 1 değeri genişleyebilir olduğunu belirtir
 
         # Pencere ayarları
-        self.setWindowTitle("Bismih KDE Karşılayıcı")
+        self.setWindowTitle("kde KDE Karşılayıcı")
         self.setMinimumSize(800, 600)
 
         # İlk kategoriyi seç

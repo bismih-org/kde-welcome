@@ -1,5 +1,5 @@
 #!/bin/bash
 # location=$(dirname "$0")
 
-cd /usr/share/bismih-welcome/
+cd /usr/share/kde-welcome/
 python3 main.py

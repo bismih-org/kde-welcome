@@ -133,7 +133,7 @@ class PackageManagerComp(QWidget):
 
         # Açıklama
         desc = """Program yüklemek için internette dolaşma
-Bismih Linux, Mağaza ve Uçbirim desteği ile kolaylıkla program yükle"""
+kde Linux, Mağaza ve Uçbirim desteği ile kolaylıkla program yükle"""
 
         desc_label = BLabel(desc, 11)
         desc_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -225,7 +225,7 @@ Bismih Linux, Mağaza ve Uçbirim desteği ile kolaylıkla program yükle"""
         docs_button = QPushButton("📘 Paket Yönetimi Belgelerini Görüntüle")
         docs_button.clicked.connect(
             lambda: QDesktopServices.openUrl(
-                QUrl("https://github.com/bismih-org/.github/wiki")
+                QUrl("https://github.com/kde-org/.github/wiki")
             )
         )
         docs_section.addWidget(docs_button)
