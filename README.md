@@ -13,7 +13,6 @@ Pardus KDE için kullanıcı dostu karşılama uygulaması. Bu uygulama, yeni ku
 
 ## 🌟 Özellikler
 
-- **Çok Dilli Destek**: Türkçe ve İngilizce arayüz
 - **Tema Desteği**: Koyu ve açık tema seçenekleri
 - **Etkileşimli Kılavuzlar**: GIF animasyonları ile görsel açıklamalar
 - **Kategori Tabanlı Gezinme**: Farklı sistem özelliklerine göre organize edilmiş içerik
